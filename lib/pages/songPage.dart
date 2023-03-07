@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,10 +10,15 @@ class songPage extends StatefulWidget {
 }
 
 class _songPageState extends State<songPage> {
+  double _value = 0;
+  int _songSeconds = 140;
+  double _userSongSeconds = 140;
   bool isPlay = true;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    // log(_value.toString());
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -41,8 +47,15 @@ class _songPageState extends State<songPage> {
                 // margin: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
 
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.transparent,
+                  // borderRadius: BorderRadius.circular(20),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.network(
+                    "https://images.pexels.com/photos/2742812/pexels-photo-2742812.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
               Container(
@@ -71,6 +84,22 @@ class _songPageState extends State<songPage> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Container(
+                width: size.width,
+                child: CupertinoSlider(
+                  min: 0.0,
+                  max: _userSongSeconds,
+                  value: _value,
+                  activeColor: CupertinoColors.white,
+                  thumbColor: CupertinoColors.white,
+                  divisions: _songSeconds,
+                  onChanged: (value) {
+                    setState(() {
+                      _value = value;
+                    });
+                  },
                 ),
               ),
               Row(
