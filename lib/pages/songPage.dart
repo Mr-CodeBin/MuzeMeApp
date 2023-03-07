@@ -15,6 +15,11 @@ class _songPageState extends State<songPage> {
   double _userSongSeconds = 140;
   bool isPlay = true;
 
+  void timechange() {
+    var mins = (_value.toInt() / 60);
+    var sec = (_value.toInt() % 60);
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -68,17 +73,17 @@ class _songPageState extends State<songPage> {
                       height: 20,
                     ),
                     Text(
-                      "Changed",
+                      "Talk Is Overrated",
                       style: GoogleFonts.overpass(
-                        fontSize: 24,
+                        fontSize: 28,
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     Text(
-                      "Changed",
+                      "Jeremy Zucker",
                       style: GoogleFonts.overpass(
-                        fontSize: 18,
+                        fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
@@ -94,7 +99,7 @@ class _songPageState extends State<songPage> {
                   value: _value,
                   activeColor: CupertinoColors.white,
                   thumbColor: CupertinoColors.white,
-                  divisions: _songSeconds,
+                  divisions: _songSeconds + 1,
                   onChanged: (value) {
                     setState(() {
                       _value = value;
@@ -106,7 +111,9 @@ class _songPageState extends State<songPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "1:39",
+                    ((_value.toInt() / 60).toStringAsFixed(0) +
+                        ":" +
+                        (_value.toInt() % 60).toString()),
                     style: GoogleFonts.overpass(
                       fontSize: 16,
                       color: Colors.white,

@@ -24,6 +24,7 @@ class _searchPageState extends State<searchPage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -73,21 +74,52 @@ class _searchPageState extends State<searchPage> {
               child: ListView.builder(
                   itemCount: _items.length,
                   itemBuilder: ((context, index) {
-                    return Container(
-                      height: 120,
-                      width: 120,
-                      margin:
-                          EdgeInsets.symmetric(vertical: 12, horizontal: 12),
-                      padding:
-                          EdgeInsets.symmetric(vertical: 12, horizontal: 12),
-                      decoration: BoxDecoration(
-                        color: Colors.blue[100],
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Text(
-                        _items[index],
-                        textAlign: TextAlign.center,
-                      ),
+                    return Column(
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              height: 120,
+                              width: size.width / 3,
+                              margin: EdgeInsets.symmetric(
+                                  vertical: 4, horizontal: 12),
+                              // padding: EdgeInsets.symmetric(
+                              //     vertical: 1, horizontal: 1),
+                              decoration: BoxDecoration(
+                                color: Colors.blueGrey,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Image.network(
+                                "https://images.pexels.com/photos/2742812/pexels-photo-2742812.jpeg?auto=compress&cs=tinysrgb&w=800",
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                            Container(
+                              height: 120,
+                              width: size.width / 1.9,
+                              margin: EdgeInsets.symmetric(
+                                  vertical: 4, horizontal: 4),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 12, horizontal: 12),
+                              decoration: BoxDecoration(
+                                color: Colors.blueGrey,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                              child: Text(
+                                _items[index],
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Divider(
+                          color: Colors.black,
+                          height: 1,
+                          thickness: 2,
+                          endIndent: 20,
+                          indent: 20,
+                        ),
+                      ],
                     );
                   })),
             ),
