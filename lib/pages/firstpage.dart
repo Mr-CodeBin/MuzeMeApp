@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:muse_me_app/pages/Homepage.dart';
+import 'package:muse_me_app/pages/NavBarPage.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
@@ -59,8 +59,8 @@ class FirstPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                onPressed: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Homepage())),
+                onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => NavBarPage())),
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 14, horizontal: 10),
                   child: Text(

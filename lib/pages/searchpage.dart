@@ -17,7 +17,7 @@ class _searchPageState extends State<searchPage> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+              padding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
               margin: EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 29, 29, 29),
@@ -29,15 +29,17 @@ class _searchPageState extends State<searchPage> {
                     Icons.search,
                     color: Colors.white,
                   ),
-                  TextField(
-                    textCapitalization: TextCapitalization.words,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: "Search",
-                      labelStyle: GoogleFonts.overpass(
-                        fontSize: 32,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
+                  Expanded(
+                    child: TextField(
+                      textCapitalization: TextCapitalization.words,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Search",
+                        hintStyle: GoogleFonts.overpass(
+                          fontSize: 14,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),
