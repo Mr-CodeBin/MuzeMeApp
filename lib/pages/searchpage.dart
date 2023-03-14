@@ -28,102 +28,104 @@ class _searchPageState extends State<searchPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
-              margin: EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 29, 29, 29),
-                borderRadius: BorderRadius.circular(24),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: TextField(
-                        textCapitalization: TextCapitalization.words,
-                        style: GoogleFonts.overpass(
-                          fontSize: 14,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "Search",
-                          hintStyle: GoogleFonts.overpass(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
+                margin: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 29, 29, 29),
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.search,
+                      color: Colors.white,
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: TextField(
+                          textCapitalization: TextCapitalization.words,
+                          style: GoogleFonts.overpass(
                             fontSize: 14,
-                            color: Colors.grey,
+                            color: Colors.white,
                             fontWeight: FontWeight.w600,
+                          ),
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "Search",
+                            hintStyle: GoogleFonts.overpass(
+                              fontSize: 14,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            Container(
-              height: 400,
-              color: Colors.transparent,
-              child: ListView.builder(
-                  itemCount: _items.length,
-                  itemBuilder: ((context, index) {
-                    return Column(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 120,
-                              width: size.width / 3,
-                              margin: EdgeInsets.symmetric(
-                                  vertical: 4, horizontal: 12),
-                              // padding: EdgeInsets.symmetric(
-                              //     vertical: 1, horizontal: 1),
-                              decoration: BoxDecoration(
-                                color: Colors.blueGrey,
-                                borderRadius: BorderRadius.circular(12),
+              Container(
+                height: size.height * 0.699,
+                color: Colors.transparent,
+                child: ListView.builder(
+                    itemCount: _items.length,
+                    itemBuilder: ((context, index) {
+                      return Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                height: 120,
+                                width: size.width / 3,
+                                margin: EdgeInsets.symmetric(
+                                    vertical: 4, horizontal: 12),
+                                // padding: EdgeInsets.symmetric(
+                                //     vertical: 1, horizontal: 1),
+                                decoration: BoxDecoration(
+                                  color: Colors.blueGrey,
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Image.network(
+                                  "https://images.pexels.com/photos/2742812/pexels-photo-2742812.jpeg?auto=compress&cs=tinysrgb&w=800",
+                                  fit: BoxFit.fitWidth,
+                                ),
                               ),
-                              child: Image.network(
-                                "https://images.pexels.com/photos/2742812/pexels-photo-2742812.jpeg?auto=compress&cs=tinysrgb&w=800",
-                                fit: BoxFit.fitWidth,
+                              Container(
+                                height: 120,
+                                width: size.width / 1.9,
+                                margin: EdgeInsets.symmetric(
+                                    vertical: 4, horizontal: 4),
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 12, horizontal: 12),
+                                decoration: BoxDecoration(
+                                  color: Colors.blueGrey,
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                                child: Text(
+                                  _items[index],
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
-                            ),
-                            Container(
-                              height: 120,
-                              width: size.width / 1.9,
-                              margin: EdgeInsets.symmetric(
-                                  vertical: 4, horizontal: 4),
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 12, horizontal: 12),
-                              decoration: BoxDecoration(
-                                color: Colors.blueGrey,
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              child: Text(
-                                _items[index],
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          color: Colors.black,
-                          height: 1,
-                          thickness: 2,
-                          endIndent: 20,
-                          indent: 20,
-                        ),
-                      ],
-                    );
-                  })),
-            ),
-          ],
+                            ],
+                          ),
+                          Divider(
+                            color: Colors.black,
+                            height: 1,
+                            thickness: 2,
+                            endIndent: 20,
+                            indent: 20,
+                          ),
+                        ],
+                      );
+                    })),
+              ),
+            ],
+          ),
         ),
       ),
     );
