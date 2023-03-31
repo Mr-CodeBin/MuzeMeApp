@@ -35,6 +35,7 @@ class _mainHomePageState extends State<mainHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -48,7 +49,7 @@ class _mainHomePageState extends State<mainHomePage> {
                       "Discover",
                       style: GoogleFonts.overpass(
                         fontSize: 32,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -72,7 +73,7 @@ class _mainHomePageState extends State<mainHomePage> {
                       "Album",
                       style: GoogleFonts.overpass(
                         fontSize: 32,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -103,7 +104,7 @@ class _mainHomePageState extends State<mainHomePage> {
                       "Recently Played",
                       style: GoogleFonts.overpass(
                         fontSize: 32,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -127,7 +128,7 @@ class _mainHomePageState extends State<mainHomePage> {
                       "Made For You",
                       style: GoogleFonts.overpass(
                         fontSize: 32,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
                     ),

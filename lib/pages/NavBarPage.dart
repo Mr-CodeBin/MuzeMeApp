@@ -49,7 +49,7 @@ class _NavBarPageState extends State<NavBarPage> {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Stack(
           children: [

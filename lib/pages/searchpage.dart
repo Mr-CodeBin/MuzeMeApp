@@ -26,7 +26,7 @@ class _searchPageState extends State<searchPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -73,6 +73,7 @@ class _searchPageState extends State<searchPage> {
                 height: size.height * 0.699,
                 color: Colors.transparent,
                 child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
                     itemCount: _items.length,
                     itemBuilder: ((context, index) {
                       return Column(
@@ -114,11 +115,11 @@ class _searchPageState extends State<searchPage> {
                             ],
                           ),
                           Divider(
-                            color: Colors.black,
-                            height: 1,
+                            color: Colors.grey,
+                            height: 2,
                             thickness: 2,
-                            endIndent: 20,
-                            indent: 20,
+                            endIndent: 30,
+                            indent: 16,
                           ),
                         ],
                       );
