@@ -34,15 +34,20 @@ class _mainHomePageState extends State<mainHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: SafeArea(
-        child: SingleChildScrollView(
+    return SafeArea(
+      top: false,
+      child: Scaffold(
+        backgroundColor: Colors.transparent.withOpacity(0.7),
+        body: SingleChildScrollView(
+          physics: AlwaysScrollableScrollPhysics( ),
           child: Padding(
             padding: EdgeInsets.fromLTRB(8, 8, 8, 50),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 28,
+                ),
                 Row(
                   children: [
                     Text(
@@ -134,6 +139,7 @@ class _mainHomePageState extends State<mainHomePage> {
                     ),
                   ],
                 ),
+                //Container
                 Container(
                   height: 200,
                   child: ListView.builder(
