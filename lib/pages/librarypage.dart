@@ -147,7 +147,7 @@ class _libPageState extends State<libPage> {
                         child: Image.asset(
                           "icons/shareIcon.png",
                           // fit: BoxFit.fill,
-                          //fixed
+                          //fixed height
                           height: 20,
                           width: 20,
                         ),
