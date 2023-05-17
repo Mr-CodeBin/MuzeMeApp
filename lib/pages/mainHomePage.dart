@@ -6,6 +6,10 @@ import 'utils/playlist_card.dart';
 class mainHomePage extends StatefulWidget {
   const mainHomePage({super.key});
 
+  // Widget createCategory() {
+  //   return ;
+  // }
+
   @override
   State<mainHomePage> createState() => _mainHomePageState();
 }
@@ -39,7 +43,7 @@ class _mainHomePageState extends State<mainHomePage> {
       child: Scaffold(
         backgroundColor: Colors.transparent.withOpacity(0.7),
         body: SingleChildScrollView(
-          physics: AlwaysScrollableScrollPhysics( ),
+          physics: AlwaysScrollableScrollPhysics(),
           child: Padding(
             padding: EdgeInsets.fromLTRB(8, 8, 8, 50),
             child: Column(
